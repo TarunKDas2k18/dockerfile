@@ -1,6 +1,6 @@
 FROM openjdk:8-jdk-alpine
 
-ENTRYPOINT [ "sh", "-c", "cd /opt/gatling-fundamentals && chmod 777 gradlew && ./gradlew gatlingRun-simulations.RuntimeParameters -DUSERS=2000 -DRAMP_DURATION=5 -DDURATION=120 && chmod 777 /root/.gradle/wrapper/dists/gradle-4.5.1-all/87kuriyahurjjkki3zii366f2/gradle-4.5.1/bin/gradle" ]
+ENTRYPOINT [ "sh", "-c", "cd /opt/gatling-fundamentals && chmod 777 gradlew && ./gradlew gatlingRun-simulations.RuntimeParameters -DUSERS=1200 -DRAMP_DURATION=5 -DDURATION=120 && chmod 777 /root/.gradle/wrapper/dists/gradle-4.5.1-all/87kuriyahurjjkki3zii366f2/gradle-4.5.1/bin/gradle" ]
 
 WORKDIR /opt
 
