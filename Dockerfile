@@ -6,6 +6,7 @@ WORKDIR /opt
 
 CMD java -XX:+PrintFlagsFinal $JAVA_OPTIONS -jar java-container.jar
 
+CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
 
 RUN wget -q https://services.gradle.org/distributions/gradle-3.3-bin.zip  \
     && unzip gradle-3.3-bin.zip -d /opt \
