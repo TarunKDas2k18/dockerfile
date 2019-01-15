@@ -1,6 +1,6 @@
 FROM openjdk:8-jdk-alpine
 
-ENTRYPOINT [ "sh", "-c", "cd /opt/gatling-fundamentals && chmod 777 gradlew && ./gradlew gatlingRun-simulations.RuntimeParameters -DUSERS=2000 -DRAMP_DURATION=5 -DDURATION=30 && sleep 200s" ]
+ENTRYPOINT [ "sh", "-c", "cd /opt/gatling-fundamentals && chmod 777 gradlew && ./gradlew gatlingRun-simulations.RuntimeParameters -DUSERS=2000 -DRAMP_DURATION=5 -DDURATION=30 && kubectl exec -t $(kubectl get pods | grep "command-demo*"| awk '{print $1}') -- sh -c "cd /opt/gatling-fundamentals/build/reports/gatling && ls -lrta" ]
 
 WORKDIR /opt
 
